@@ -57,12 +57,12 @@ const Form = props => {
         onChange={handleChange}
         value={member.role}>
           <option value="">Select Your Purpose</option>
-          <option value="Front End Developer">Front End Developer</option>
-          <option value="Backend Developer">Backend Developer</option>
-          <option value="Full Stack">Full Stack Web Developer</option>
-          <option value="Rebel">Resistance Fighter</option>
-          <option value="Empirist">Stormtrooper</option>
-          <option value="Nada">That's My Stapler</option>
+          <option value="I am a Front End Developer">Front End Developer</option>
+          <option value="I am a Backend Developer">Backend Developer</option>
+          <option value="I do Full Stack">Full Stack Web Developer</option>
+          <option value="I am with the Resistance">Resistance Fighter</option>
+          <option value="Imperialist 4 life!">Stormtrooper</option>
+          <option value="I don't really work here anymore">That's My Stapler</option>
         </select>
 
       <label htmlFor="email">  Email </label>
@@ -74,7 +74,7 @@ const Form = props => {
         value={member.email}
       />
 
-      <button type="submit">Add Team Member</button>
+      <button type="submit">Add A Team Member</button>
     </form>
   );
 };
