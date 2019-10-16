@@ -34,6 +34,7 @@ const Form = props => {
       <label htmlFor="name">Name </label>
       <input
         id="name"
+        placeholder="Enter Your Name Here"
         type="text"
         name="name"
         onChange={handleChange}
@@ -55,17 +56,19 @@ const Form = props => {
         name="role"
         onChange={handleChange}
         value={member.role}>
-          <option value="">Select a Role</option>
+          <option value="">Select Your Purpose</option>
           <option value="Front End Developer">Front End Developer</option>
           <option value="Backend Developer">Backend Developer</option>
           <option value="Full Stack">Full Stack Web Developer</option>
           <option value="Rebel">Resistance Fighter</option>
           <option value="Empirist">Stormtrooper</option>
+          <option value="Nada">That's My Stapler</option>
         </select>
 
       <label htmlFor="email">  Email </label>
       <input type = "email"
         id="email"
+        placeholder="Enter Your Email Address"
         name="email"
         onChange={handleChange}
         value={member.email}
