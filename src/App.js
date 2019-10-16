@@ -26,7 +26,12 @@ function App() {
     setEditMembers(newList);
   };
 
-  
+  const deleteMembers = (id) => {
+    const newList = members.filter(member => {
+      return member.id !== id;
+    });
+    setNewMembers(newList);
+  };
 
   return (
     <div className="App">
