@@ -11,7 +11,7 @@ const Members = props => {
 
           <p>{member.email}</p>
 
-          <button onClick={() => props.editMember(member.id)}>Edit</button>
+          <button onClick={() => props.editRow(member)}>Edit</button>
           <button onClick={() => props.deleteMember(member.id)}>Delete</button>
         </div> 
     )}
