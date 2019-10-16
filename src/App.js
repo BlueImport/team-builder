@@ -17,9 +17,9 @@ function App() {
     setCurrentUser(initialFormState)
   };
 
-  const updateUser = (id, updatedUser) => {
+  const updateUser = (name, updatedUser) => {
     setEdit(false)
-    setUser(members.map(member =>(member.id ? updatedUser : member)))
+    setMembers(members.map(member =>(member.id ? updatedUser : member)))
   }
 
   const newMember = member => {

@@ -31,7 +31,7 @@ return (
         placeholder="Enter Your Email Address"
         name="email"
         onChange={handleInputChange}
-        value={member.email}
+        // value={member.email}
       />
     
         <button>Update Member Info</button>
