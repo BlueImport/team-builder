@@ -1,47 +1,51 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import TeamMembers from "./components/teammembers";
+import React, { useState } from "react";
+import Members from "./components/teammembers";
 import Form from "./components/form";
 
-function App() {
-  
-  const [members, setNewMembers] = useState([])
-  const [editMembers, setEditMembers] = useState({});
 
-  const members = member => {
-    const members = {
+
+function App() {
+  const [members, setMembers] = useState([])
+  const [memberToEdit, SetMemberToEdit] =useState({});
+
+  const newMember = member => {
+    const newMember = {
       id: members.length,
       name: member.name,
-      role: member.role,
-      email: member.email
+      email:member.email,
+      role: member.role
+
     };
-    setNewMembers([...members, setNewMembers]);
+    setMembers([...members, newMember]);
   };
 
-  const editMembers = (id) => {
-    const newList = members.filter(member => {
+  const editMember = (id )=> {
+
+    const newArray = members.filter(member => {
       return member.id === id;
     });
-    setEditMembers(newList);
+
+    SetMemberToEdit(newArray);
   };
 
-  const deleteMembers = (id) => {
-    const newList = members.filter(member => {
+  const deleteMember = (id )=> {
+    const newArray = members.filter(member => {
       return member.id !== id;
     });
-    setNewMembers(newList);
+
+    setMembers(newArray);
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Team Members</h1>
-        <Form newMembers = {newMembers} memberToEdit = {editMembers} />
-        <Members members = {members} deleteMembers = {deleteMembers} />
-      </header>
+      <h1>Team Members</h1>
+      <Form newMember={newMember} memberToEdit={memberToEdit} />
+      <Members members={members} deleteMember={deleteMember} editMember={editMember} />
+
     </div>
   );
 }
+
 
 export default App;

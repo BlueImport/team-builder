@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React from 'react';
 
-const TeamMembers = props => {
-    const [member, setMember] = useState({
-        name: "",
-        title: ""
-    
-    });
+const Members = props => {
+     return (
+    <div>
+      {
+          props.members.map(member => 
+        <div className="member" key={member.id}>
+          <h2>{member.name}</h2>
+          <p>{member.role}</p>
 
-    return TeamMembers;
-}
+          <p>{member.email}</p>
 
-export default TeamMembers;
+          <button onClick={() => props.editMember(member.id)}>Edit</button>
+          <button onClick={() => props.deleteMember(member.id)}>Delete</button>
+        </div> 
+    )}
+    </div>
+
+  );
+
+};
+
+export default Members;
