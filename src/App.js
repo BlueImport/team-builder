@@ -7,7 +7,7 @@ import Form from "./components/form";
 
 function App() {
   const [members, setMembers] = useState([])
-  const [memberToEdit, SetMemberToEdit] =useState({});
+  const [memberToEdit, SetMemberToEdit] =useState({name: "", email: ""});
 
   const newMember = member => {
     const newMember = {
@@ -20,14 +20,11 @@ function App() {
     setMembers([...members, newMember]);
   };
 
-  const editMember = (id )=> {
-
-    const newArray = members.filter(member => {
-      return member.id === id;
-    });
-
-    SetMemberToEdit(newArray);
-  };
+  const editMember = (memberToAdd )=> {
+    SetMemberToEdit(memberToAdd) 
+      return memberToAdd;
+    };
+  
 
   const deleteMember = (id )=> {
     const newArray = members.filter(member => {
@@ -49,3 +46,4 @@ function App() {
 
 
 export default App;
+
