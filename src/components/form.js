@@ -31,7 +31,7 @@ const Form = props => {
 
   return (
     <form onSubmit={submitForm}>
-      <label htmlFor="name">Name</label>
+      <label htmlFor="name">Name </label>
       <input
         id="name"
         type="text"
@@ -48,7 +48,7 @@ const Form = props => {
         value={member.role}
       /> */}
 
-      <label htmlFor="role">Role</label>
+      <label htmlFor="role">  Role </label>
       <select
         id="role"
         type="text"
@@ -58,10 +58,12 @@ const Form = props => {
           <option value="">Select a Role</option>
           <option value="Front End Developer">Front End Developer</option>
           <option value="Backend Developer">Backend Developer</option>
-          <option value="Full Stack">Full Stack</option>
+          <option value="Full Stack">Full Stack Web Developer</option>
+          <option value="Rebel">Resistance Fighter</option>
+          <option value="Empirist">Stormtrooper</option>
         </select>
 
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email">  Email </label>
       <input type = "email"
         id="email"
         name="email"
