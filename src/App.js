@@ -1,8 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TeamMembers from "./components/teammembers";
+import Form from "./components/form";
 
 function App() {
+  
+  const [members, setNewMembers] = useState([])
+  const [editMembers, setEditMembers] = useState({});
+
+  const members = member => {
+    const members = {
+      id: members.length,
+      name: member.name,
+      role: member.role,
+      email: member.email
+    };
+    setNewMembers([...members, setNewMembers]);
+  };
+
+  const editMembers = (id) => {
+    const newList = members.filter(member => {
+      return member.id === id;
+    });
+    setEditMembers(newList);
+  };
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,6 +35,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <TeamMembers />
         <a
           className="App-link"
           href="https://reactjs.org"
