@@ -2,25 +2,14 @@ import './App.css';
 import React, { useState } from "react";
 import Members from "./components/teammembers";
 import Form from "./components/form";
-import EditUserForm from "./components/editUserForm";
+// import EditUserForm from "./components/editUserForm";
 
 
 
 function App() {
   const [members, setMembers] = useState([])
-  const initialFormState = { name: "", email: "", role:[0] }
-  const [edit, setEdit] = useState(false)
-  const [currentUser, setCurrentUser] = useState(initialFormState)
+  const [membersToEdit, setMemberToEdit] = useState([]);
 
-  const editRow = members => {
-    setEdit(true)
-    setCurrentUser(initialFormState)
-  };
-
-  const updateUser = (name, updatedUser) => {
-    setEdit(false)
-    setMembers(members.map(member =>(member.id ? updatedUser : member)))
-  }
 
   const newMember = member => {
     const newMember = {
@@ -33,6 +22,11 @@ function App() {
     setMembers([...members, newMember]);
   };
 
+  const editMember = (id) => {
+    const newArray = members.filter(member => {
+      return member.id !== id;
+    })
+  }
 
   const deleteMember = (id )=> {
     const newArray = members.filter(member => {
@@ -44,9 +38,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Team Members</h1>
-      <Form newMember={newMember} memberToEdit={updateUser} />
-      <Members members={members} deleteMember={deleteMember} editRow={editRow} />
+      <h1 className="Header">Team Members</h1>
+      <Form className="Form"
+      newMember={newMember} 
+      membersToEdit={membersToEdit} />
+     <Members className="Info"
+     members={members} 
+     deleteMember={deleteMember} 
+     editMember={editMember} />
 
     </div>
   );

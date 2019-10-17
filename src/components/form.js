@@ -11,19 +11,23 @@ const Form = props => {
 
   useEffect(() => {
 
-    return setMember(props.memberToEdit);
-  },[props.memberToEdit]);
+ 
+    if (props.membersToEdit.id)
 
-  const handleChange = event => {
-    setMember({ ...member, [event.target.name]: event.target.value });
-
-  };
-  const submitForm = event => {
-    event.preventDefault(); // updates the state
-    props.newMember(member);
-    setMember({ name: "", email: "" });
-
-  };
+    setMember(props.memberToEdit);
+  
+  
+    },[props.memberToEdit]);
+    const handleChange = event => {
+      setMember({ ...member, [event.target.name]: event.target.value });
+  
+    };
+    const submitForm = event => {
+      event.preventDefault();
+      props.newMember(member);
+      setMember({ name: "", email: "" });
+  
+    };
 
   return (
     <form onSubmit={submitForm}>
